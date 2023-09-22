@@ -1,0 +1,1 @@
+import pathlibfile = pathlib.Path("/Users/ghost/OneDrive/Desktop/new")x = 1for i in file.glob('*'):    i.rename(f'/Users/ghost/OneDrive/Desktop/new/got{ x}')    x += 1

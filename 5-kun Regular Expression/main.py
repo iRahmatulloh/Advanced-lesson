@@ -1,0 +1,1 @@
+import datetimeprint('Uzbekistan'.datetime.tzinfo())

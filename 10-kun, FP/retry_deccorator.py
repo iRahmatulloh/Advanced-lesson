@@ -1,0 +1,1 @@
+import timedef retry_func(n):    def decorator(func):        def wraps(*args):            res = func(*args)            for i in range(n):                print(res)        return wraps    return decorator@retry_func(10)def add(x, y):    return x + ystart = time.time()add(3, 6_000)end = time.time()print(start - end)

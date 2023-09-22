@@ -1,0 +1,1 @@
+def solution(ls):    x = ls[0]    for i in ls[1::]:        print(i)        if x < i > ls[i + 1]:            return False        return Trueprint(solution([1, 2, 5, 3, 5]))

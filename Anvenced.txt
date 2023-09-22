@@ -1,0 +1,336 @@
+
+-- Parsing - berilgan argument ustida qanday amal qilish kerakligini aniqlash jarayoni
+
+-- 2 xil argument :
+	- Positional Arguments - Majburiy
+	- Optional Arg - Ixtioriy
+
+
+
+                                                           				 --- 10.05.2023 --- 03.Collections
+
+-- deque() - list uchun sub-classbo'lib, qo'shish va o'chirish samaradorligini oshirishga xizmat qiladi
+
+-- Deque | d.s da uzunlik kiritish mumkin.
+
+- list() | Elementlarni tez  olish uchun eng zo'ri.
+- deuque() | Elementlarni o'chirish uchun eng zo'ri
+
+-- namedtuple() - factory function bo'lib u key : value pair tuple yaratadi.
+
+-- defaultdict() - dict uchun sub-class bo'lib mavjud bo'lmagan keylar uchun default qiymat beradi.
+
+	Dict farqlari
+
+-- OrderedDict - kalit so'zlar ketma-ketligini eslab qoladi dict() esa yo'q.
+
+-- defaultdict - Hech Qachon mavjud bo'lmagan kalit uchun KeyError raise qilmaydi
+
+-- dict - Kalit so'zlar ketma-ketligini eslab qolmaydi va mavjud bo'lmagan kalit so'zlar uchun KeyError raise qiladi.
+
+
+												-- Context Manager - 
+
+-- Context Manager - resurslarni boshqarish uchun ishlatiladigan objectlar
+
+- Context Manager - ikkita dunder metodga ega bo'lgan classlarni nazarda tutadi:
+		- __enter__() - kirish
+		- __exit__()  - chiqish
+
+-- contextlib - Context Managerlar bilan ishlash uchun ajoyib qulayliklar yaratuvchi module.
+	- @contextmanager decoratorini ishlatish orqali funksiyamizni context managerga aylantiramiz!
+		- Bu yerda yield ishlatish kerak chunki u generatsiya qaytaradi.
+			yield odatda __enter__ va __exit__ o'rtasida qo'llanadi
+
+
+
+
+												-- 16.05.2023 | 06. Functools 
+
+-- Functools - FP paradigm uchun juda keng funksiyalarni taqdim qiluvchi module.
+	- Higher-Order Functions (Yuqori tartibli funksiyalar)
+
+-- Higher-order function - funksiyalar ustida amal bajaruvchi va funksiya qaytaruvchi funksiyalarga aytiladi.
+
+-- Inner Functions - Higher-Order function terminalogiyasi asosida ishlovchi funksiya xisoblanadi.
+	- Ya'ni bor funksiyadan boshqa bir funksiya yaratish.
+
+-- Cashe - bu aqlli va tezkor ma'lumot saqlagich xudud bo'lib, komputerlar ularda takroriy ish natijasini saqlaydi.
+	- Biz decorator sifatida 2 ta cashe funksiyasini ishlatamiz:
+		- cashe(user_function)
+		- lru_cashe(user_funcition) - # lru - Least Recently Used - oxirgi marta ishlatilagan
+																		2lasini farqini topish?
+
+
+
+-- Iterator - bu object bo'lib biror konteyner bo'ylab takrorlanish imkonini beradi.
+	- Iterator objectida 2 ta dunder metod mavjud:
+			/     	\ 
+		     /		 \
+		 __iter__       __next__
+
+->| __iter__ - Metodi iterator objectini o'zini qaytaradi.
+->| __next__ - Metodi iteratsiyadagi keyingi qiymatni qaytaradi
+
+
+-- Itarable - __iter__ metodi bor objectlar
+-- Iterator - Unde __iter__ ham __next__ ham mavjud bo'lib __iter__ object qaytarsa, __next__ keyingi elementni qaytaradi.
+ 
+
+
+														-- 09.Generators
+
+-- Generator - Iteratorning bir turi.
+	- Generatorlarni generatorlar bilan yaratamiz
+
+	- Generator pros | Ijobiy tomonlari -
+
+- Memory efficiency - Xotiradan katta joy olmasdan cheksiz miqdordagi ma'lumotlar oqimi yoki qiymatlari bilan ishlash.
+
+- Laziness - Ma'lumotlarni faqat so'ralganda ishlab chiqaradi, bu esa ortiqcha harakat talab qilmaydi.
+
+- Composability - Murakkabroq ish oqimlarini yaratish uchun boshqa generatorlar yoki funksiyalar bilan birlashtirilishi mumkin, bu esa murakkab algoritmlarni yaratishni osonlashtiradi.
+
+- Error handling - Xatolarni qayta ishlash imkonini beradi va yaratish jarayonida yuzaga keladigan xatolarni oldini olish jarayonini ham osonlashtiradi.
+
+
+
+							| Generator cons - salbiy tomonlari |
+
+- On time use - Ulardan faqat bir-marotaba foydalasnish mumkin, chunki ular ishllab chiqilgan ma'lumotlarni saqlamaydi.
+
+- Non-random access - Arrayyga o'xshab istalgan ma'lumotni olish imkoni yo'q, faqat next bor.
+
+- Limited to sequense - Faqat ketma-ketlik ishlab chiqaradi.
+
+-- Ninja dasturchining kodi:
+	- kalit = (x for x in range(1, 10))
+	
+	- Bu kodni Generatordan iteratorga ham o'tkazishimiz mumkin.
+	shunchaki - print(list(kalit)) <- xolos
+
+- raqamlar = [i for i in range(1, 100) if i % 2 == 0] <----<-----<-----
+
+
+
+														-- 10.Itertools ---
+
+-- Itertools - tez va xotira tejovchi standart kutubxona xisoblanib, iteratsiyalarni bajarish uchun ishlatiladi.
+
+
+											-- Regular Expression | Muntazam ifoda --
+
+-- Regular Expression siz xoxlayotgan (email) bilan boshqqa emaillarni taqqoslaydi va oxiri gmail bilan tugaydiganlarni ko'rsatadi.
+
+-- REgular Expression - belgilar ketma-ketligi bilan ishlovchi dasturlash tili bo'lib, siz xoxlayotgan shakldagi ma'lumotni qidirishga, solishtirishga va o'zgartirishga yotdam beradi.
+	-- Metacharacter - [] - belgilar to'plamini ko'rsatish uchun ishlatiladi.
+
+	  	- 	-	-
+	->| (.) - istalgan tushib qolgan belgi uchun (newlinedan tashqari)
+	->| [] - oraliq yoki istalgan bir belgi uchun 
+	
+	->| \d - digits(0-9) - raqamlar uchun 
+	->| \w - word characters (letters, digits, or underscores)  -- '\d.\w' |<- boshi raqamlar bilan boshlanib oxiri harflar bilan 																	tugaydigan so'zlarni qidirayapman
+	->| \s - whitespace (space, tabs and newlines)
+	->| \D - Not digit
+	->| \W - Not word
+	->| \S - Not Space
+
+
+	
+                                               								 -- 16. Web Scrapping --
+
+-- Web Scrapping - biror web-sahifadan ma'lumotlarni tig'ib kelish.
+
+
+
+														-- 17. Logging --
+
+-- Logging 4 xil turi :
+	- Info | Dsaturning kuzatish va to'g'ri ishlashni ko'rsatadigan xabarlar.
+	- DEBUG | Debug qilish uchun batafsil xabar bo'lib, foydalanuvchilarga ko'rinmaydi.
+	- WARNING | hal qilinishi mumkin bo'lgan muammolar haqida xabarlar beradi. (dastur ishlayveradi)
+	- ERROR | Dasturning ishlashiga to'sqinlik qiladigan jiddiy muammolar yoki xatolar haqida xabarlar.
+	- CRITICAL | Dasturning ishdan chiqishiga olib keladigan juda jiddiy muamolar yoki xatola.r haqida xabarlar. (dastur to'xtaydi)
+
+
+-- Logger tuzishdagi ketma ketlik:
+	- getLoger()
+	- setLoger()
+	- Formatter()
+	- FileHandle()
+	- setFormatter()
+	- addHandler()
+   |- Exceptionlar uchun 
+	- setLevel()	
+
+
+
+													-- 18. Pathlib and OS
+
+-- os | Barcha operatsion tizimga tegishli bo'lgan ishlarni bajarish uchun ishlatiladi.
+
+
+													-- 19. Web APIs
+
+-- Application Program Interface || Komputer yoki dasturlar bir-biri bilan gaplashish va ma'lumot almashish imkonini beruvchi
+					qoidalar to'plamini anglatuvchi umumiy atama.
+
+-- REST || 'Representational State Transfer' bo'lib dasturlar yoki komputerlarni HTTP protokoli orqali gaplashish imkonini yaratib 							beruvchi qoidalar to'plami desak bo'ladi
+
+
+-- HTTP || shunday protokolki butun internet undan ma'llumot olish va jo'natish uchun foydalanadi.
+
+
+
+														-- 20.sys -- 
+
+-- Sys || Interpreter tomonidan ishlatiladigan yoki qo'llab-quvvatlanadigan ba'zi o'zgaruvchilarga va kuchli o'zaro ta'sir qiluvchi ba'zi 							funksiyalarga kirishni taminlydi
+
+
+3 xil tur:
+	- stdin ->| standart input
+	- stdout ->| standart output
+	- stderr ->| standart error
+
+
+
+
+								--- 21.JSON ---
+
+-- JSON || insonlar uchun yozishga va o'qishga, komputerlar uchun tahlil qilish va generatsiya qilishga oson.
+
+-- json.dumps() || JSONga malumotni convert qilaadi.
+
+--json.loads() || JSONdan Python objectga ma'lumotni convert qilish uchun ishlatiladi
+
+
+
+												-- 23. Advanced FP --
+
+-- Funksiya -- murakkab muammoni kichik bo'laklarga bo'lib uni hal qilish uchun soddalashtirish.
+	     - Abstraction -- muhim bo'lgan ishga diqqat qaratib qolgan narsalar haqida o'ylamaslik.
+
+-- First-class-citizen || bu o'zgaruvchiga saqlash, boshqa funksiya argument qilib berish va boshqa funksiyadan qaytarish.
+
+-- Closure || tashqi funksiya o'z ishini tugatsada yoki o'chsada, 'enclosing scope'dagi o'zgaruvchilarga kira oladigan va eslab qola 														oladigan funksiya
+
+Cell Object || Dasturning turli qismlarida taqsimlangan o'zgaruvchilarni saqlash uchun 'Cell' objectlar yaratiladi. O'zgaruvchi cell 						objectda saqlanganda biz uni turli joylardan o'zgartirishimiz va unga kirishimiz mumkin bo'ladi.
+
+												-- 23. Advanced FP part-2 --
+
+-- Decorator bu || callable (function, class yoki method) olib, callable qaytaruvchi funksiya.
+	- Ba'zi manbalarda uni ' wrapper ' hamm deb atashadi. Chunki u haqiqatdan ham biz beradigan funksiyani o'rab uni harakatlarini 																o'zgartiradi 
+
+- Bor funksiyani o'zgartirmasdan uni qandaydur harakatga keltirmoqchi bo'lsangiz decoratorlar juda foydali
+
+
+
+
+													-- 24. DocTest --
+
+-- DocTest || docstringdagi matnga asoslanib kodimizni test qilish uchun yordam qiladi.
+
+													-- 25. Unit Test --
+
+-- JUnitdan ilhomlangan xolda Python dasturchilar kodlarni test qilish uchun ishlab chiqilgan Standart Kutubxona.
+
+--- Test qilish quyidagi koseptlarni taqdim etadi.
+	- Test fixture || Testga tayyorlash jarayoni bbo'lib, biror vaqtinchalik kod yozib kodni test qilish uchun.
+	- Test case || Test uchun yagona savol, ya;ni biror kod kutilganidek ishlashini test qilish uchun.
+	- test suite || test uchun savollar to'plami bo'lib, bir necha xil holatlarda test qilish uchun.
+	- test runner || testga baxo qo'yuvchi o'qituvchi bo'lib, test yurgazuvchilar test o'tgan yoki muvaffaqiyatsiz bo'lganini aytadi.
+		Natijalarni ekranga yoki xuddi loglardek biror faylga saqlab ko'rsatish mumkin.
+
+													--26. PyTest --
+
+-- PyTest || third-party package bo'lib unit testni soddalashtirilgan varianti.
+
+													-- 27. Coverage --
+
+-- Coverage || bizning test effektivligi va bizning kodimiz qanchalik test bilan o'ralganligini tekshiradi.
+ 
+
+													-- 28. Multithreading -- 
+
+-- Process || Biror natijaga erishish uchun harakatlar ketma-ketligi qadamlari
+
+-- Thread || O'sha harakatlarni bajaruvchi bir blok(ishchi)
+
+-- Qachonki dastur ko'p jarayonlardan tashkil topgan bo'lsa biz uni multiprocessing deb ataymiz.
+
+-- Qachonki dastur ko'p threadlardan tashkil topgan bo'lsa biz uni multithreading deb ataymiz
+
+-- Bound - chegara
+
+-- Agar dasturni ishlashi CPU tezligiga bog'liq bo'lsa demak u CPU bound bo'ladi.
+
+	- Kalkuliyaatsiga amallarini bajarish.
+	- Ma'lumotlarni manipulyatsiya qilish.
+	- va h.k.z
+
+-- Agar dasturni ishlashi Input va Output tezligiga bog'liq bo'lsa demak u I/O bound bo'ladi.
+	
+	- Malumotlarni diskdan o'qish.
+	- Ma'lumotlar bazasiga kirish.
+	- va h.k.z
+
+-- Multiprocessing --> CPU-bound
+
+-- Multithreading --> I/O-bound
+
+-- .start() || Threadni ishga tushirish uchun ishlatiladi.
+-- .join() || Main thread amalni tugatishini kutib turadi va natijalarni birlashtiradi.
+
+---- Threadingni I/O bound uchun ishlating
+
+-- Ba'zan biror topshiriqni backroundda ishlashini xoxlaysiz. Buni bajarish uchun siz Daemon thread ishlatishingiz kerak.
+	- Daemon threads == Background Threads
+
+	
+-- Daemon Threadning avfzalliklari:
+	- Loglarni yozib borish
+	- Biror websitedan ma'lumot screpe qilish
+	- Ma'lumotlarni databasega avtomatiik saqlash.
+	- va h.k.z
+
+-- Uning eng yaxshi tomoni dasturni kutmasligida. U o'z ishini bajarib bo'lib keyin to'xtaydi garchi dastur to'xtamasada.
+
+
+												-- 32. Asyncio -- 
+-- Asyncio || Single thread concurrencyga erishish uchun Event loopdan foydalanadi.
+
+-- Coroutine || maxsus funksiya bo'lib u o'z ichiga biror payt to'xtashi yoki davom eta olishi mumkin, aynan shu xususiyat to'xtash oralig'i dasturning boshqa funksiyalarini ishga tushirishga yordam beradi.
+
+-- async -|- coruutine yaratish uchun kalit so'z
+-- await -|- coroutine-ni to'xtatish uchun kalit so'z.
+
+-- run() -|- Event loop-ni ishga tushiradi.
+
+-- Task || 'coroutine'ga wrapper bo'lib event loopda uni imkon boricha tezroq ishlatishga xizmat qiladi.
+	
+	-- Task bir task ishlayotganida boshqasini ishlatishga imkon yaratadi.
+	-- await biror vazifa tugagunicha coroutine-ni bloklaydi
+
+-- Ba'zan siz yaratgan task ichidagi coroutine juda uzoq kutib qolishi mumkin.
+	- BU muammoni yechish uchun Task objectlar 'cancle()' methodini oladi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

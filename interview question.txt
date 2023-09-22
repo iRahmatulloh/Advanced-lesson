@@ -1,0 +1,271 @@
+1. -- Nima uchun Pythonni tanlash kerak?
+	- 1. Python orqali biron loyihani tez fursatda qurishimiz mumkin.
+	- 2. Python Api vazifasini yaxshi bajargani uchun.
+
+2. -- List, Tuple, Set farqlari?
+	- 
+
+3. -- Array :
+	- O'zgarmas turkumdagi, bir xil ma'lumotlarni qabul qiladigan, d.s bo'lib, bir necha berilgan uzunlikdagi ma'lumotlarni bitta xotirada saqlaydi.
+
+ 4. -- Funksiya? 
+	- Biron vazifani bajaruvchi code block 
+	
+	-- Ishlatishdan maqsad:
+		-- Functional decomposition(bo'laklarga bo'lib yig'ish)
+
+
+5. -- Modul va Package farqi:
+	- Pythonda har qanday fayl modul. Chunki u faylni biron dasturchiga foydalanish uchun berish mumkin,
+	- Package esa modullar to'plami. bunga kutubxonalar yoki frameworklar kirishi mumkin.
+
+6. -- LEGB nima?
+	- Scope -- Qamrov
+	- Funksiya va classlar scope bo'la olmaydi
+	- Local, Enclosing, Global, Build in -- Local Scope istalgan funksiyaning ichi, 
+	- Enclosing - inner funksiyalar; funksiyani ichida value yaratilssa va biron scope ga kirsa u enclosing
+
+7. -- OOP qanday muammoni yechadi?
+	-- 4 ta : 
+		- ABS
+		- Encapsulation
+		- Inheritance
+		- Polymorphism
+
+	- u paradigma, va u dasturlash tilidan ustun turadi.
+	- re-usability kuchaytiradi
+	- DRY
+	- Modularity (classlar yoki modullarga bo'lib tashlab tuzish)
+	_Bu ishlarni FP ham qila oladi ammo unda Objectional mavjud emas
+	_O'yinlar ham OOP tomonidan yaratilgan.
+
+8. -- Class, Object?
+	- class -- bu shablon
+	- object - shablondan hosil bo'ladigan predmet, lekin ichida metodlari va attributlari bor.
+	- __new__ | yangi object yaratadi ammo self unga ma'lumotlarni beradi.
+	
+	
+9. -- Metodlar nechta turga bo'linadi?
+	-- Classic
+	-- Static
+	-- class
+		- Static metod | classni ichida yaratiladigan ammo classga umuman aloqasi bo'lmagan metodlar.
+		- class metod | classga bog'liq bo'lgan metod bo'lib, u har qanday qiymatga kirishi va olishi mumkin.
+
+
+10. -- Encapsulation | kapsulalash, 
+	-  Hattoki fuksiyalar ham encapsulation,
+		- bir necha harakatlar ketma ketligini kapsulalab -> funksiya hosil bo'layapti 
+		
+11. -- Polymorphism | ko'p shakllik
+	- Polymorphismning eng katta plusi METOD OVERRIDING. ya'ni bir martta chaqirilgan clasni yana boshqa qiymatlar chaqira olish.
+	- qiymatning holatga qarab o'zgarishi,
+	- INheritance asosida ishlaydi
+	
+	- Doctyping | Inheritancelarsiz vazzifani bajaradi
+
+
+12. -- Dunder method | dunder metodlar operator va statementlarga qarab ish yuritadi.
+	- va qachon ishga tushishni o'zi biladi
+
+
+13. -- data struktura va algoritm farqlari?
+	-- data struktura | malumotga effektiv, kirish, ushlash, o'chirish, yozish imkonini beruvchi konteyner.
+	-- algoritm | muammoni yechish uchun qadamlar ketma ketligi
+
+
+14. -- context manager nima foydasi bor?  | 
+	- open bilan qulay ishlashga 
+
+
+15. -- recursiya va loop farqi?
+	- recursiya xotiradan ko'p joy egallaydi
+	- recursiyani looplar ishni qiyinlashtirvorganda ishlatgan ma'qul:
+		- 1 000 ta element bor ularga kirib chiqish kerak bunda -> loop ! lar
+		- 50 ta elementga kirib o'zgartirish kiritib chiqish kerak  -> recursiya !
+
+	- recursiyaning o'zi algoritm (algoritmik paradigmalar)
+
+
+16. -- filter, map, reduce farqlari?
+	- filter | shart asosida malum qiymmatlar bilan ishlaydi
+	- map | har bir elementga kirib chiqadi va u bilan ishlar qiladi
+	- reduce | kamaytirish, ya'ni biron algoritm ishini kamaytirish
+
+17. -- Functools nima uchun ishlatiladi?
+	- Functools moduli FP paradigma bo'lib bizga High-Order-Functionlarni qaytaradi
+
+
+18. -- circular vs shadowing imports farqlari?
+	-- circular import | ikki modul bir birini import orqali chaqirgan holat
+	-- shadowing import | import qilingan modul va built-in modul nomlari bir hil bo'lgan holatda. biri ustunlikka erishganda ikkinchisini soya qilib qolishi
+
+19. -- generator vs iterator?
+	-- iterator | __iter__() va __next__() metodlari bor bo'lgan object.
+	-- generator | generator funksiya yoki expression tomonidan yaratilgan bo'lib. u generator qiymat qaytaradi va keyinggisi so'ralgunga qadar to'xtab turadi. yield kelit so'zi bilan
+
+20. -- Generator ijobiy tomonlari + :
+	- Memory afficiency ||| Xotiradan kam joy egallagan holda ko'plab ishlarni qila oladi.
+	- Laziness ||| Ma'lumotni so'ralganda ishlab chiqaradi, bu ortiqcha harakat talab qilmaydi.
+	- Composability ||| Murakkabroq algoritmlarni yaratish va boshqa generator va funksiyalar bilan birlashishni osonlashtiradi.
+	- Error HANDLING ||| Xatolarni qayta ishlash imkonini beradi va jarayon paytida yuzaga keladigan xatolarni oldini olish jarayonini ham osonlashtiradi.
+
+21. -- Generator salbiy tomonlari -:
+	- On time use ||| Ulardan faqat bir marotaba foydalanish mumkin, chunki ishlab chiqilgan malumot saqlanmaydi.
+	- Non random acces ||| Arrayga o'xshab istalgan malumotni olishni iloji yo'q, faqat next bor.
+	- Limited to sequense ||| Faqat ketma ketlik ishlab chiqaradi.
+ 
+
+
+22. -- re nima va nimani bajaradi?
+	- regular expression | bu matn bilan qayta ishlash uchun kuchli vosita bo'lib. u matndagi malumotlarni qidirishi, moslashtirishi va manipulyatsiya qilishi mumkin.
+
+23. -- UTF-8 nima?
+	- 'Unicode Transformation Format' qisqartamasi bo'lib, UTF-8 eng ko'p kodlash turi hisoblanib, python undan default parametrlarda foydalanadi.
+
+24. -- random ichki tuzilishi?
+	- Random | Random modulining ichiga kirib ko'radigan bo'lsak u ko'proq c dasturlash tilida yozilganiga guvoh bo'lamiz.
+		- Biz seed() metodiga qiymat bersak shu asosida ishlaydi ammo qiymat bermasak u 1970 yildan beri hisoblanayotgan vaqtni bo'lagini qaytaradi.
+		- u bizga PRNG orqali yaratilgan soxta tasodifiy sonni olamiz.
+
+25. -- collections | bu conteyner pythonning list, set, dict defoult d.s lariga muqobil variantni taqdim etuvchi kutubxona
+	- deque() - list uchun subclass hisoblanib, qo'shish va o'chirish samaradorligini oshiradi.
+		- list elementlarni tez olish uchun bo'lsa 
+		- deque elementlarni tez o'chirish uchun 
+	
+	- namedtuple() - factory funtion hisoblanib key va value pairs tuple  yaratadi
+
+	-- ordereddict() - yo'q bo'lgan elementlar uchun default qiymat bera oladi
+	-- defaultdict() - yo'q bo'lgan element uchun error raise qilmaydi
+	-- dict() - ketma ketlikni eslab qolmaydi va yo'q bolgan elenent uchun raise qaytaradi
+
+
+
+26. -- cashe va lru_cashe farqlari?
+	- cashe va lru_cashe | ikkalasi ham bir xil obyekt qaytaradi. ammo lru_cashe kichikroq va tezroq hiosblanadi va unga cheklov berish mumkin.
+
+27. -- itertools | tez va xotirani tejovchi kutubxona xisoblanib, iteratsiyalarni amalga oshirish uchun ishlatiladi
+
+28. -- typing | amaliyot vaqtida yoki runtime davomida maslahatlar uchun. u asosiy yordamni Any, Union, Callable va Generik dan turlaridan iborat.
+
+29. -- unicode | Unicode insonga tanish bo'lgan belgilardan foydalanish imkonini beradi va belgilarga o'ziga xos kodlar berishni maqsad qiladi.
+
+30. -- web scraping | saytlardan ma'lumot yig'ib kelish va tahlil qilish jarayoni. URL manzilga so'rovlarni yuborish va HTML sahifa ma'lumotlarini tahlil qilishda Python BEatifulSOupdan 	foydalandi. 
+	- BS4 ma'lumotlarni tahlil qilishda juda kuchli kutubxona hisoblanadi
+
+31. -- Logging | moduldagi hodisalarni qayd qiladi
+	- Loggerlar | dasturdagi xabarlarni kiritish uchun ishlatiladi
+
+	-- Logging 5 xil tuzulishga ega:
+		- INFO || dasturning to'g'ri ishlashini ko'rsatuuvchi xabarlar
+		- DEBUG || debug qilish uchun batafsil xabarlar bo'lib, ularni userlarga ko'rsatmaydi.
+		- WARNING || hal qilinishligi kerak bo'lgan muammolar haqida xabar beradi, ammo dastur ishlay veradi
+		- ERROR || dasturning ishlashiga jiddiy tasir ko'rsatuvchi xabarlar haqida habar beradi
+		- CRITICAL || dasturning ishdan chiqishiga olib keluvchi muammolar haqida xabar beradi. dastur ishlashdan to'xtaydi
+
+
+32. -- pathlib | fayl tizimi bilan ishlashda obyektga yo'nnaltirilgan interfeysni taminlaydi.	
+	- xar xil operatsion tizimlar uchun mos semantika bilan fayl tizimini yo'llarini ifoda etuvchi classlarni taklif etadi.
+
+33. -- os | operatsion tizimga bog'liq funksiyalardan foydalanishda portable yo'llarni taqdim etadi
+	- u o'qish, yozish, muhit o'zgaruvchilariga kirish kabi funksiyalarni o'z ichiga oladi.
+
+
+34. -- API | turli xil dasturiy ilovalarning bir biri bilan aloqa qilishini taminlovchi vosita deb olsak bo'ladi.
+
+35. -- sys | interpreter tomonidan ishlatiladigan yoki qo'llab quvvatlanadigan ba'zi kuchli tasir etuvchi funksiyalarga kirishni taminlaydi
+
+36. -- json | insonlar o'qishga va yozishga, malumotni tahlil qilishga va generatsiya qilishga oson bo'lgan js data strukturasi.
+
+37. -- csv | jadval yoki malumotlar bazasi kabi malumotlarni saqlovchi oddiy fayl turi.
+
+38. -- Abstraction || muhim bo'lgan ishga fokus qaratib qolgan narsalar haqida o'ylamaslik.
+
+39. -- First-class-citizen || bu o'zgaruvchiga saqlash, boshqa funksiya argument qilib berish va boshqa funksiydan qaytarish.
+
+40. -- Closure || tashqi funksiya ishini tugatgan taqdirdan ichki 'enclosing scopedagi' o'zgaruvchilarga kira oladigan funksiya.
+
+41. -- Cell objecct || dasturning turli qismlariga taqsimlangan o'zgaruvchilarni saqlash uchun 'Cell object' yaratadi. Cell objectga 	qo'shilgan o'zgaruvchini biz turli joylardan 				o'zgartirishimiz va unga kirishimiz mumkin.
+
+42. -- Decorator || callalble(funksiya, class yoki method) olib, callable qaytaruvchi funksiya.
+	- Ba'zilar uni 'wrapper' ham deb atashadi. chunki u dasturni o'rab uni harakatlarini o'zgartiradi.
+
+43. -- Bor funksiyani o'zgartirmasdan uni qandaydur harakatga keltirmoqchi bo'lsangiz decoratorlar juda qulay.
+
+44. -- DocTest || docstringdagi matnga asoslanib kodimizni test qilish uchun yordam beradi.
+
+45. -- Ilonshunoslar javachilarning JUnit test packegidan ilhomlanib python uchun ishlab chiqilgan, Test qilish kutubxonasi.
+
+46. -- Test qilish 4 xil konseptni taqdim etadi:
+	- Test fixture -|- Testga tayyorgarlik bo'lib, biror kodni vaqtinchalik yozib test qilib ko'rish.
+	- Test case -|- Test uchun yagona savol, ya'ni ma'lum kod kutilganidek ishlashini test qilish uchun.
+	- Test suite -|- Test qilish uchun savollar to'plami bo'lib, bir necha xil holatlarda test qilish uchun.
+	- Test runner -|- Testga baxo qo'yuvchi o'qituvchi bo'lib, test yurgazuvchilar test o'tgan yoki muvaffaqiyatsiz bo'lganini aytadi.
+	
+	- Test natijalarini ekranga yoki loglardek biror faylga saqlab ko'rsatish mumkin.
+
+47. -- PyTest || third-party package bo'lib unit testni soddalashtirilgan varianti.
+
+48. -- Coverage || bizning test effectivligi va bizning kodimiz qanchalik test bilan o'ralganligini tekshiradi.
+
+49. -- Process || Malum natijaga ershish uchun harakatlar ketma-ketligi qadamlarda.
+
+50. -- Thread || o'sha harakatlarni bajaruvchi bir block(ishchi)
+
+	-- Qachonki dastur ko'p jarayonlardan tashkil topsa biz uni multiprocessing deb ataymiz.
+	-- Ammo dastur ko'p threadlardan tashkil topsa - multithreading  deb ataymiz.
+	-- Multiprocessing --> CPU - bound 
+	-- Multithreading --> I/O - bound
+
+	-- Dastur ishlashi CPU ga bog'liq bo'lsa u -> CPU bound ---->> Calculator amalllari, ma'lumotlarni manipulyatsiya qilish.
+	-- Dastur ishlshi Input, Output larga bog'liq bo'lsa u -> I/O bound ----->> Ma'lumotlarni diskdan o'qish, malumotlar bazasiga kirish
+
+	 -- .start() || Threadni ishga tushurish uchun 
+	-- .join() || Thread amallarni tugashini kutadi va natijalarni birlashtirish uchun.
+
+51. -- Ba'zan biron topshiriq Backroundda ishlashini xoxlaymiz. Daemon Thread == Backround Thread.
+	-- Avfzalliklari:
+		-- Loglarni yozib borish.
+		-- Biron web saytni scrape qilish.
+		-- Ma'lumotlarni data basega avtomatik saqlash.
+
+	-- Daemon Threadning eng yaxshi tomoni dasturni kutmasligi. U o'z ishini bajarib bo'lib keyin to'xtaydi, dastur to'xtamasa ham
+
+52. -- Hash function || matematik funksiya bo'lib, qiymat oladi va index qaytaradi.
+
+53. -- Hash collision || moammo payti:
+	-- Chaining -> zanjirlash. bu LInked List yaratishga sabab bo'ladi va ishni sekinlashtiradi.
+	-- open adressing >- yangi manzillar ochish. Bu odatda arrayni hajmini doim oshirib borish degani.
+	-- Load factor >- bu arraylar sonini uning ichidagi itemslarga bo'lish (len(array) / num_item)
+
+54. -- Tree || Non-linear, hierarical tuzulishga ega d.s bo'lib, shoxlar yordamida bir biriga ulanadi.
+
+55. 	-- Tree turlari:
+		-- Full Binary Tree || Har bir internal nodeni yo 2 ta bolasi yoki umuman yo'q bo'ladi.
+		-- Complete Binary Tree || har bir daraja (chap tomoni) imkon boricha ammo bir tomoni to'lmagan bo'ladi.
+
+56. -- LInkedLIst || xotiraning xar xil joyidan joy egallaydi.
+	- Node >- istalgan turdagi ma'lumotni saqlovchi xisoblanadi va unda keyingi nodega manzil saqlanadi.
+	- Node ichida data va nextni saqlaydi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

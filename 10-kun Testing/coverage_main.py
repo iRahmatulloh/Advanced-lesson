@@ -1,0 +1,1 @@
+from random import  randintfrom main import divdef test_add():    x = randint(1, 1_000_000_000)    y = randint(1, 1_000_000_000)    assert div(x, y) ==x / y

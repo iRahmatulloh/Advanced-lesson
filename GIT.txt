@@ -1,0 +1,8 @@
+															-- 01.git -- 
+
+--GIT || Asosiy versiyaga tegmagan holda boshqa versiyaga ustida ishlash imkonini beradi.
+
+-- .git || HEAD -- asosiy versiya
+	   config -- konfiguratsiya
+
+-- git reverb || --

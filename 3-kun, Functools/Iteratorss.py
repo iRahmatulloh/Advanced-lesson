@@ -1,0 +1,1 @@
+class Iterator:    def __init__(self, *data):        self.data = data        self.position = 0    def __iter__(self):        return self    def __next__(self):        if self.position >=len(self.data):            raise StopIteration        data = self.data[self.position]        self.position += 1        return datafor i in Iterator(1,2,3,4,5,6,7,8):    print(i)

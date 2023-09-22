@@ -1,0 +1,1 @@
+def inc_n(x):    ls = [2, 3, 4, 5, 6, 7]    res = []    for i in ls:        res.append(i * x)    return resprint(inc_n(3))
